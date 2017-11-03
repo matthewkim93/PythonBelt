@@ -1,0 +1,28 @@
+*{
+  font-family: sans-serif;
+}
+.main{
+  display:inline-block;
+  vertical-align: top;
+  margin:15px;
+  border: 1px solid black;
+  padding:5px;
+}
+label{
+  width:100px;
+  display: inline-block;
+}
+input{
+  margin:5px;
+  border: 1px solid black;
+}
+h4{
+  margin-top: 5px;
+}
+.errors{
+  margin:2px;
+  color:red;
+}
+p{
+  margin: 5px;
+}

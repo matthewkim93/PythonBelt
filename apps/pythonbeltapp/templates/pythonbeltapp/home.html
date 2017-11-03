@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Travel Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'pythonbeltapp/css/home.css' %}" media="screen" title="Home" charset="utf-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="/logout">Logout</a>
+    </div>
+    <h2>Hello, {{request.session.name}}!</h2>
+    <h4>Your Trip Schedules</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Destination</th>
+          <th>Travel Start Date</th>
+          <th>Travel End Date</th>
+          <th>Plan</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for travel in schedule %}
+          <tr>
+            <td><a href="/travels/destination/{{travel.id}}">{{travel.destination}}</a></td>
+            <td>{{travel.travel_start}}</td>
+            <td>{{travel.travel_end}}</td>
+            <td>{{travel.desc}}</td>
+          </tr>
+        {% endfor %}
+        {% for travel in joined %}
+          <tr>
+            <td><a href="/travels/destination/{{travel.id}}">{{travel.destination}}</a></td>
+            <td>{{travel.travel_start}}</td>
+            <td>{{travel.travel_end}}</td>
+            <td>{{travel.desc}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h4>Other Users' Travel Plans</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Destination</th>
+          <th>Travel Start Date</th>
+          <th>Travel End Date</th>
+          <th>Do You Want to Join?</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for plan in plans %}
+          <tr>
+            <td>{{plan.creator.name}}</td>
+            <td><a href="/travels/destination/{{plan.id}}">{{plan.destination}}</a></td>
+            <td>{{plan.travel_start}}</td>
+            <td>{{plan.travel_end}}</td>
+            <td>
+              <form class="" action="/travels/join" method="post">
+                {% csrf_token %}
+                <input hidden name="plan_id" value="{{plan.id}}">
+                <input class="join" type="submit" name="" value="Join">
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a id="addtravel" href="/travels/add">Add Travel Plan</a>
+  </body>
+</html>

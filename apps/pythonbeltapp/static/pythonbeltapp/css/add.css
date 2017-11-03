@@ -1,0 +1,19 @@
+.header{
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+.header a{
+  margin:15px;
+}
+label{
+  width:150px;
+  display: inline-block;
+  margin:5px;
+}
+input{
+  box-shadow:1px 1px 1px black;
+}
+.errors{
+  color:red;
+}

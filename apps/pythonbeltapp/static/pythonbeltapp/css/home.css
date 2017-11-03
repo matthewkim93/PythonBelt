@@ -1,0 +1,32 @@
+*{
+  font-family: sans-serif;
+}
+.header{
+  text-align: right;
+  margin-right: 25px;
+}
+table{
+  width:100%;
+  border:2px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+td{
+  border: 1px solid black;
+  padding:10px;
+}
+tr:nth-child(even){
+  background-color: #dddddd
+}
+th{
+  background-color: rgb(158, 158, 158);
+  border: 1px solid black;
+}
+#addtravel{
+  margin: 15px;
+  float:right;
+}
+.join{
+  width: 50%;
+  box-shadow: 1px 1px 1px black;
+}

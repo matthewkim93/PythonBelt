@@ -1,0 +1,14 @@
+*{
+  font-family: sans-serif;
+}
+p{
+  margin-left: 25px;
+}
+.header{
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+.header a{
+  margin:15px;
+}

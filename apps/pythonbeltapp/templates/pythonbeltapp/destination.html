@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'pythonbeltapp/css/destination.css' %}" media="screen" title="destination" charset="utf-8">
+  </head>
+  <body>
+    <div class="header">
+      <a href="/travels">Home</a>
+      <a href="/logout">Logout</a>
+    </div>
+    <h2>{{plan.destination}}</h2>
+    <p>Planned By: {{plan.creator.name}}</p>
+    <p>Description: {{plan.desc}}</p>
+    <p>Travel Date From: {{plan.travel_start}}</p>
+    <p>Travel Date To: {{plan.travel_end}}</p>
+
+    <h2>Other users joining the trip:</h2>
+    {% for member in members %}
+      <p>{{member.name}}</p>
+    {% endfor %}
+  </body>
+</html>
